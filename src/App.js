@@ -9,7 +9,7 @@ import Login from "./Pages/Login/Login";
 import Registration from "./Pages/Registration/Registration";
 import Header from "./Pages/Shared/Header/Header";
 import NotFound from "./Pages/NotFound/NotFound";
-import Footer from "./Pages/Footer/Footer";
+import Footer from "./Pages/Shared/Footer/Footer";
 
 
 function App() {

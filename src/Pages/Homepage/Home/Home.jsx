@@ -1,6 +1,6 @@
 import React from "react";
-import Footer from "../../Footer/Footer";
 import Products from "../../Products/Products";
+import Footer from "../../Shared/Footer/Footer";
 import Header from "../../Shared/Header/Header";
 import Category from "../Category/Category";
 import Review from "../Review/Review";
