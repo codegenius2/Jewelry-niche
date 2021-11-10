@@ -1,0 +1,12 @@
+.review-container {
+  color: aliceblue;
+  background-image: url("https://i.ibb.co/m839tcc/testi-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media screen and (min-width: 668px) {
+  .review-container {
+    padding: 150px;
+  }
+}

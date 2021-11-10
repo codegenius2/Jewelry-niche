@@ -1,0 +1,11 @@
+.category-img {
+  overflow: hidden;
+}
+.cat-img {
+  transform: scale(110%);
+  transition: transform 0.4s ease-in-out;
+}
+.category-img:hover .cat-img {
+  transform: scale(100%);
+  filter: brightness(80%);
+}

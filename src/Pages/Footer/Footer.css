@@ -1,0 +1,46 @@
+.footer-area {
+  background-color: #2a303b;
+  font-family: "Poppins", sans-serif;
+}
+.footer-list a,
+.footer-text a {
+  display: block;
+  text-decoration: none;
+  font-size: 15px;
+  color: rgb(179, 177, 177);
+  line-height: 30px;
+}
+.footer-list a:hover,
+.footer-text a:hover {
+  color: #13c5dd;
+}
+.footer-title {
+  color: rgb(240, 238, 238);
+  font-size: 24px;
+  font-weight: 500;
+}
+.footer-text {
+  font-size: 15px;
+  color: lightgrey;
+}
+hr {
+  color: white;
+  background-color: white;
+  border: 1px solid;
+}
+.ico {
+  padding-right: 7px;
+  color: #13c5dd;
+}
+
+.footer-direction {
+  color: gray;
+  padding: 7px;
+  text-align: center;
+  border: 1px solid gray;
+  border-radius: 25px;
+}
+.footer-direction:hover {
+  color: #13c5dd;
+  border-color: #13c5dd;
+}

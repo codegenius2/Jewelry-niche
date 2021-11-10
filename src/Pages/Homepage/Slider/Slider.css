@@ -1,0 +1,30 @@
+.Slider {
+  color: white;
+  text-align: center;
+}
+
+/* Css for slider caption and title */
+.carousel-caption {
+  width: 35%;
+  z-index: 10;
+  text-align: left;
+  top: 20%;
+  left: 5%;
+  right: auto;
+  bottom: auto;
+}
+.slider-title {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+.slider-text {
+  font-size: 18px;
+  font-family: Cabin;
+}
+
+@media screen and (min-width: 668px) {
+  .slider-title {
+    font-size: 68px;
+  }
+}

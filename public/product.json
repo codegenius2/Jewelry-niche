@@ -1,0 +1,100 @@
+[
+  {
+    "title": "Promise Ring",
+    "vendor": "CaratLane",
+    "price": 691,
+    "image": "https://i.ibb.co/N14SsTC/1-5c789c84-aba2-4dbb-8992-69166a320cac2.jpg",
+    "rating": 3
+  },
+  {
+    "title": "Gold Bangle",
+    "vendor": "CaratLane",
+    "price": 1000,
+    "image": "https://i.ibb.co/d6Qs4Sd/10.jpg",
+    "rating": 4
+  },
+  {
+    "title": "Copper Bangle",
+    "vendor": "Tradino",
+    "price": 1346,
+    "image": "https://i.ibb.co/sqyQXs2/11.jpg",
+    "rating": 3
+  },
+  {
+    "title": "Grooved Bangle",
+    "vendor": "CaratLane",
+    "price": 1716,
+    "image": "https://i.ibb.co/VDQDRpL/9.jpg",
+    "rating": 5
+  },
+  {
+    "title": "Classic Ring",
+    "vendor": "CaratLane",
+    "price": 1517,
+    "image": "https://i.ibb.co/2tnH6nb/4.jpg",
+    "rating": 5
+  },
+  {
+    "title": "Solitaire Ring",
+    "vendor": "Crocs",
+    "price": 1031,
+    "image": "https://i.ibb.co/vdSf4Hw/3.jpg",
+    "rating": 5
+  },
+  {
+    "title": "Copper Bangle",
+    "vendor": "Tradino",
+    "price": 1241,
+    "image": "https://i.ibb.co/sqyQXs2/11.jpg",
+    "rating": 3
+  },
+  {
+    "title": "Plaited Ring",
+    "vendor": "CaratLane",
+    "price": 843,
+    "image": "https://i.ibb.co/GW8fdSH/6.jpg",
+    "rating": 3
+  },
+  {
+    "title": "Crumpled Ring",
+    "vendor": "Tradino",
+    "price": 414,
+    "image": "https://i.ibb.co/dJMhTyM/8.jpg",
+    "rating": 5
+  },
+  {
+    "title": "Hera Ring",
+    "vendor": "Glamr",
+    "price": 1805,
+    "image": "https://i.ibb.co/KLwNNPX/5.jpg",
+    "rating": 3
+  },
+  {
+    "title": "Moon Necklace",
+    "vendor": "Maribel",
+    "price": 1835,
+    "image": "https://i.ibb.co/gRyMC8t/12.jpg",
+    "rating": 3
+  },
+  {
+    "title": "Lotus Necklace",
+    "vendor": "Latika",
+    "price": 1055,
+    "image": "https://i.ibb.co/98Dyrzk/13.jpg",
+    "rating": 5
+  },
+  {
+    "title": "Qaren Stud",
+    "vendor": "Nakshi",
+    "price": 945,
+    "image": "https://i.ibb.co/fnCDqP6/152.jpg",
+    "rating": 5
+  },
+  {
+    "title": "Beads Chokapora",
+    "vendor": "Nakshi",
+    "price": 651,
+    "image": "https://i.ibb.co/nnRnnh0/142.jpg",
+    "rating": 5
+  }
+]
