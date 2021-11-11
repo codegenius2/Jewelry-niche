@@ -10,6 +10,9 @@ import Registration from "./Pages/Registration/Registration";
 import Header from "./Pages/Shared/Header/Header";
 import NotFound from "./Pages/NotFound/NotFound";
 import Footer from "./Pages/Shared/Footer/Footer";
+import Products from "./Pages/Products/Products";
+import PrivateRoute from "./Pages/Login/PrivateRoute";
+import Order from "./Pages/Order/Order";
 
 
 function App() {
@@ -17,6 +20,7 @@ function App() {
     <div className="App">
       <AuthProvider>
         <Router>
+          <Header />
           <Switch>
             <Route exact path='/'>
               <Home />
@@ -36,10 +40,17 @@ function App() {
             <Route exact path='/registration'>
               <Registration />
             </Route>
+            <Route exact path='/products'>
+              <Products />
+            </Route>
+            <PrivateRoute path="/product/:id">
+              <Order></Order>
+            </PrivateRoute>
             <Route path='*'>
               <NotFound />
             </Route>
           </Switch>
+          <Footer />
         </Router >
       </AuthProvider>
     </div >

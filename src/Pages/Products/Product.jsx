@@ -4,6 +4,8 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import { Button, CardActionArea, CardActions, Rating } from "@mui/material";
+import "./Products.css";
+import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
   return (
@@ -19,7 +21,9 @@ const Product = ({ product }) => {
         </CardActionArea>
         <CardActions className='d-flex justify-content-between'>
           <p className='product-price'>${product.price}</p>
-          <Button variant='contained'>Order Now</Button>
+          <Link to={`/product/${product._id}`}>
+            <Button variant='contained'>Order Now</Button>
+          </Link>
         </CardActions>
       </Card>
     </Col>

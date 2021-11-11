@@ -3,3 +3,18 @@
   font-family: "Lucida Sans Unicode", "Lucida Grande";
   font-weight: 700;
 }
+.product-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+.product-vendor {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: grey;
+}
+.product-price {
+  font-size: 32px;
+  color: rgb(0, 167, 83);
+  font-weight: 700;
+}

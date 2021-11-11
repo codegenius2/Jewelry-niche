@@ -45,7 +45,7 @@ function Review() {
   };
 
   return (
-    <Container className='text-center review-container p-sm-5'>
+    <Container className='text-center my-md-5 my-3 review-container p-sm-5'>
       <Box>
         <h1 className='review-title'>What People Say</h1>
         <p className='review-text'>Testimonials</p>
