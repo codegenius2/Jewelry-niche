@@ -1954,7 +1954,14 @@
     "prop-types" "^15.7.2"
     "react-is" "^17.0.2"
 
-"@mui/material@^5.1.0":
+"@mui/icons-material@^5.1.0":
+  "integrity" "sha512-GD2cNZ2XTqoxX6DMUg+tos1fDUVg6kXWxwo9UuBiRIhK8N+B7CG7vjRDf28LLmewcqIjxqy+T2SEVqDLy1FOYQ=="
+  "resolved" "https://registry.npmjs.org/@mui/icons-material/-/icons-material-5.1.0.tgz"
+  "version" "5.1.0"
+  dependencies:
+    "@babel/runtime" "^7.16.0"
+
+"@mui/material@^5.0.0", "@mui/material@^5.1.0":
   "integrity" "sha512-K76v7zRhpJToInSI8sRcEmTwpVFBZ223VIusjZRKXN8JzX+PuErG7skfa1yUuhc3f4VEqcYYUw0LvI+DJJ05eg=="
   "resolved" "https://registry.npmjs.org/@mui/material/-/material-5.1.0.tgz"
   "version" "5.1.0"
@@ -10201,7 +10208,7 @@
     "strip-ansi" "6.0.0"
     "text-table" "0.2.0"
 
-"react-dom@*", "react-dom@^17.0.2", "react-dom@>=16.14.0", "react-dom@>=16.6.0":
+"react-dom@*", "react-dom@^17.0.2", "react-dom@>=16.14.0", "react-dom@>=16.6.0", "react-dom@>=16.8.0":
   "integrity" "sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz"
   "version" "17.0.2"
@@ -10363,6 +10370,11 @@
     "workbox-webpack-plugin" "5.1.4"
   optionalDependencies:
     "fsevents" "^2.1.3"
+
+"react-simple-star-rating@^3.0.0":
+  "integrity" "sha512-kxl9ucQTr1TzXGT/klBe7EMqCN9uuRoSlZqKCr9HMMriEY8rB/VwABtwELYhSClhkE0LIRpWw12EAG9hq5DOSg=="
+  "resolved" "https://registry.npmjs.org/react-simple-star-rating/-/react-simple-star-rating-3.0.0.tgz"
+  "version" "3.0.0"
 
 "react-swipeable-views-core@^0.14.0":
   "integrity" "sha512-0W/e9uPweNEOSPjmYtuKSC/SvKKg1sfo+WtPdnxeLF3t2L82h7jjszuOHz9C23fzkvLfdgkaOmcbAxE9w2GEjA=="

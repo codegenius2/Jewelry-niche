@@ -1,0 +1,13 @@
+.order-form {
+  text-align: center;
+}
+.addReview-title {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+@media screen and (min-width: 668px) {
+  .order-form {
+    width: 100%;
+  }
+}

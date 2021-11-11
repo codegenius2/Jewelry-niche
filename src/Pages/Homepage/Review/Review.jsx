@@ -1,40 +1,14 @@
 import * as React from "react";
+import { useEffect } from "react";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import "./Review.css";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 import { Container } from "react-bootstrap";
+import { Rating } from "@mui/material";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-
-const images = [
-  {
-    label: "San Francisco – Oakland Bay Bridge, United States",
-    imgPath:
-      "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60",
-  },
-  {
-    label: "Bird",
-    imgPath:
-      "https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60",
-  },
-  {
-    label: "Bali, Indonesia",
-    imgPath:
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80",
-  },
-  {
-    label: "Goč, Serbia",
-    imgPath:
-      "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60",
-  },
-  {
-    label: "amaa",
-    imgPath:
-      "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60",
-  },
-];
 
 function Review() {
   const theme = useTheme();
@@ -44,8 +18,14 @@ function Review() {
     setActiveStep(step);
   };
 
+  const [reviews, setReviews] = React.useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/review/")
+      .then((res) => res.json())
+      .then((data) => setReviews(data));
+  }, []);
   return (
-    <Container className='text-center my-md-5 my-3 review-container p-sm-5'>
+    <Container className='text-center my-md-5 my-3 review-container p-sm-5 mx-auto'>
       <Box>
         <h1 className='review-title'>What People Say</h1>
         <p className='review-text'>Testimonials</p>
@@ -55,9 +35,19 @@ function Review() {
           index={activeStep}
           onChangeIndex={handleStepChange}
           enableMouseEvents>
-          {images.map((step) => (
-            <div className='py-5'>
-              <p>{step.label}</p>
+          {reviews.map((review) => (
+            <div className='review-section mx-auto' key={review._id}>
+              <div className='mt-4'>
+                <img src={review.img} alt='' className='review-img' />
+              </div>
+              <p className='review-message'>{review.message}</p>
+              <Rating
+                name='read-only'
+                size='medium'
+                value={review.rating}
+                readOnly
+              />
+              <p className='review-name'>{review.Name}</p>
             </div>
           ))}
         </AutoPlaySwipeableViews>

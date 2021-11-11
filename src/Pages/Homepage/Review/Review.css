@@ -4,9 +4,24 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+.review-section {
+  text-align: center;
+}
+.review-name {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.review-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
 @media screen and (min-width: 668px) {
   .review-container {
     padding: 150px;
+  }
+  .review-section {
+    width: 60%;
   }
 }

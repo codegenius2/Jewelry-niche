@@ -1,0 +1,8 @@
+a {
+  text-decoration: none;
+  color: #2a303b;
+}
+ListItemText {
+  font-size: 18px;
+  font-weight: 900;
+}

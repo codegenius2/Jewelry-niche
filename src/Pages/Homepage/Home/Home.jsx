@@ -5,6 +5,7 @@ import Category from "../Category/Category";
 import Review from "../Review/Review";
 import Slider from "../Slider/Slider";
 import { Link } from "react-router-dom";
+import Footer from "../../Shared/Footer/Footer";
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
         </Link>
       </div>
       <Review />
+      <Footer />
     </div>
   );
 };

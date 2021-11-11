@@ -13,6 +13,7 @@ import Footer from "./Pages/Shared/Footer/Footer";
 import Products from "./Pages/Products/Products";
 import PrivateRoute from "./Pages/Login/PrivateRoute";
 import Order from "./Pages/Order/Order";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 
 
 function App() {
@@ -46,11 +47,13 @@ function App() {
             <PrivateRoute path="/product/:id">
               <Order></Order>
             </PrivateRoute>
+            <PrivateRoute path='/dashboard'>
+              <Dashboard />
+            </PrivateRoute>
             <Route path='*'>
               <NotFound />
             </Route>
           </Switch>
-          <Footer />
         </Router >
       </AuthProvider>
     </div >

@@ -22,7 +22,7 @@ const Order = () => {
   }, [id]);
 
   //   Use form hooks function
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     // setBookUser(data);
 
@@ -74,7 +74,7 @@ const Order = () => {
               />
             </p>
             <p>
-              <i class='fas fa-location-arrow'></i> {singleProduct.vendor}
+              <i className='fas fa-location-arrow'></i> {singleProduct.vendor}
             </p>
           </Col>
         </Row>
