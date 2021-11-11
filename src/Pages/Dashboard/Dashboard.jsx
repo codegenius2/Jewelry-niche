@@ -22,8 +22,10 @@ import Payment from "../Payment/Payment";
 import HomeIcon from "@mui/icons-material/Home";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import RateReviewIcon from "@mui/icons-material/RateReview";
-// import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
-import {LogoutIcon, AdminPanelSettingsIcon} from "@mui/icons-material";
+import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
+import LogoutIcon from "@mui/icons-material/Logout";
+import MyOrders from "../MyOrders/MyOrders";
+import AddProduct from "../AddProduct/AddProduct";
 
 const drawerWidth = 240;
 
@@ -60,10 +62,26 @@ function Dashboard(props) {
         </ListItem>
         <ListItem button key={1}>
           <ListItemIcon>
+            <RateReviewIcon />
+          </ListItemIcon>
+          <Link to={`${url}/myorder`}>
+            <ListItemText primary='My Order' />
+          </Link>
+        </ListItem>
+        <ListItem button key={1}>
+          <ListItemIcon>
             <AdminPanelSettingsIcon />
           </ListItemIcon>
           <Link to={`${url}/makeAdmin`}>
             <ListItemText primary='Make Admin' />
+          </Link>
+        </ListItem>
+        <ListItem button key={1}>
+          <ListItemIcon>
+            <AdminPanelSettingsIcon />
+          </ListItemIcon>
+          <Link to={`${url}/addproduct`}>
+            <ListItemText primary='Add New Product' />
           </Link>
         </ListItem>
         <ListItem button key={1}>
@@ -157,6 +175,12 @@ function Dashboard(props) {
             </Route>
             <Route path={`${path}/payment`}>
               <Payment />
+            </Route>
+            <Route path={`${path}/myorder`}>
+              <MyOrders />
+            </Route>
+            <Route path={`${path}/addproduct`}>
+              <AddProduct />
             </Route>
           </Switch>
         </Box>
