@@ -8,7 +8,7 @@ import useAuth from "../../Hooks/useAuth";
 import "./Order.css";
 
 const Order = () => {
-  const [bookingSuccess, setBookingSuccess] = useState(false);
+  const [orderSuccess, setOrderSuccess] = useState(false);
   //  import user and useparams id
   const { user } = useAuth();
   const { id } = useParams();
@@ -25,16 +25,16 @@ const Order = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     // setBookUser(data);
-
-    //  if user booking is valid then
-    if (!data.Name) {
+    console.log(data);
+    //  if user Order is valid then
+    if (!data.name) {
       return (
         <Spinner className='mx-auto' animation='border' variant='danger' />
       );
     } else {
       // set singleProduct in data
       data.status = "pending";
-      data.packag = singleProduct;
+      data.product = singleProduct;
 
       //   fetch the post API
       fetch("https://aqueous-tor-77995.herokuapp.com/orders", {
@@ -46,8 +46,9 @@ const Order = () => {
       })
         .then((res) => res.json())
         .then((result) => {
+          console.log(result);
           if (result.insertedId) {
-            setBookingSuccess(true);
+            setOrderSuccess(true);
           }
         });
     }
@@ -57,7 +58,7 @@ const Order = () => {
   return (
     <Container className='my-md-5 my-3'>
       <div className='order-form mx-auto'>
-        <p className='regular-title mb-md-5 mb-3'>Complete Your Booking</p>
+        <h2 className='regular-title mb-md-5 mb-3'>Complete Your Order</h2>
 
         <Row className='single-product-card g-4 my-4'>
           <Col sm={4} md={4}>
@@ -79,8 +80,8 @@ const Order = () => {
           </Col>
         </Row>
 
-        {bookingSuccess ? (
-          <Alert severity='success'>Booking Added Successfully!</Alert>
+        {orderSuccess ? (
+          <Alert severity='success'>Order Added Successfully!</Alert>
         ) : (
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className='form-floating mb-3'>
@@ -89,7 +90,7 @@ const Order = () => {
                 className='form-control'
                 id='floatingInput'
                 value={user.displayName}
-                {...register("Name")}
+                {...register("name")}
                 required
               />
               <label htmlFor='floatingInput'>Name</label>
@@ -101,7 +102,7 @@ const Order = () => {
                 value={user.email}
                 className='form-control'
                 id='floatingInput'
-                {...register("Email")}
+                {...register("email")}
                 required
               />
               <label htmlFor='floatingInput'>Email</label>
@@ -111,7 +112,7 @@ const Order = () => {
                 type='number'
                 className='form-control'
                 id='floatingInput'
-                {...register("Phone")}
+                {...register("phone")}
                 required
               />
               <label htmlFor='floatingInput'>Phone Number</label>
@@ -121,23 +122,15 @@ const Order = () => {
                 type='text'
                 className='form-control'
                 id='floatingInput'
-                {...register("Address")}
+                {...register("address")}
                 required
               />
               <label htmlFor='floatingInput'>Address</label>
             </div>
-            <div className='form-floating'>
-              <select className='form-select mb-3' {...register("gender")}>
-                <option value='male'>male</option>
-                <option value='female'>female</option>
-                <option value='other'>other</option>
-              </select>
-              <label htmlFor='floatingSelectGrid'>Gander</label>
-            </div>
             <input
               className='btn btn-success px-3'
               type='submit'
-              value='BOOKING NOW'
+              value='ORDER NOW'
             />
           </form>
         )}

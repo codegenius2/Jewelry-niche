@@ -1,12 +1,12 @@
+import { Rating } from "@mui/material";
+import Box from "@mui/material/Box";
+import { useTheme } from "@mui/material/styles";
 import * as React from "react";
 import { useEffect } from "react";
-import { useTheme } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import "./Review.css";
+import { Container } from "react-bootstrap";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
-import { Container } from "react-bootstrap";
-import { Rating } from "@mui/material";
+import "./Review.css";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -20,7 +20,7 @@ function Review() {
 
   const [reviews, setReviews] = React.useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/review/")
+    fetch("https://aqueous-tor-77995.herokuapp.com/review/")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

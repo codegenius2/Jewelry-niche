@@ -23,9 +23,13 @@ import HomeIcon from "@mui/icons-material/Home";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import RateReviewIcon from "@mui/icons-material/RateReview";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import LogoutIcon from "@mui/icons-material/Logout";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MyOrders from "../MyOrders/MyOrders";
 import AddProduct from "../AddProduct/AddProduct";
+import AllOrders from "../AllOrders/AllOrders";
+import ManageProducts from "../ManageProducts/ManageProducts";
 
 const drawerWidth = 240;
 
@@ -62,7 +66,23 @@ function Dashboard(props) {
         </ListItem>
         <ListItem button key={1}>
           <ListItemIcon>
-            <RateReviewIcon />
+            <ShoppingCartIcon />
+          </ListItemIcon>
+          <Link to={`${url}/orders`}>
+            <ListItemText primary='Manage All Order' />
+          </Link>
+        </ListItem>
+        <ListItem button key={1}>
+          <ListItemIcon>
+            <ShoppingCartIcon />
+          </ListItemIcon>
+          <Link to={`${url}/manageproducts`}>
+            <ListItemText primary='Manage All Products' />
+          </Link>
+        </ListItem>
+        <ListItem button key={1}>
+          <ListItemIcon>
+            <ShoppingCartIcon />
           </ListItemIcon>
           <Link to={`${url}/myorder`}>
             <ListItemText primary='My Order' />
@@ -78,7 +98,7 @@ function Dashboard(props) {
         </ListItem>
         <ListItem button key={1}>
           <ListItemIcon>
-            <AdminPanelSettingsIcon />
+            <AddShoppingCartIcon />
           </ListItemIcon>
           <Link to={`${url}/addproduct`}>
             <ListItemText primary='Add New Product' />
@@ -178,6 +198,12 @@ function Dashboard(props) {
             </Route>
             <Route path={`${path}/myorder`}>
               <MyOrders />
+            </Route>
+            <Route path={`${path}/orders`}>
+              <AllOrders />
+            </Route>
+            <Route path={`${path}/manageproducts`}>
+              <ManageProducts />
             </Route>
             <Route path={`${path}/addproduct`}>
               <AddProduct />
