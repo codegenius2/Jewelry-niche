@@ -3,11 +3,13 @@ import Alert from "@mui/material/Alert";
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Spinner } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { useHistory } from "react-router";
 import { useParams } from "react-router";
 import useAuth from "../../Hooks/useAuth";
 import "./Order.css";
 
 const Order = () => {
+  const history = useHistory();
   const [orderSuccess, setOrderSuccess] = useState(false);
   //  import user and useparams id
   const { user } = useAuth();
@@ -49,6 +51,7 @@ const Order = () => {
           console.log(result);
           if (result.insertedId) {
             setOrderSuccess(true);
+            history.push("/dashboard/myorder");
           }
         });
     }

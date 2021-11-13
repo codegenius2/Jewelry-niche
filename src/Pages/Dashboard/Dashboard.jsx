@@ -30,11 +30,12 @@ import MyOrders from "../MyOrders/MyOrders";
 import AddProduct from "../AddProduct/AddProduct";
 import AllOrders from "../AllOrders/AllOrders";
 import ManageProducts from "../ManageProducts/ManageProducts";
+import MakeAdmin from "../MakeAdmin/MakeAdmin";
 
 const drawerWidth = 240;
 
 function Dashboard(props) {
-  const { LogOut } = useAuth();
+  const { LogOut, admin } = useAuth();
   const { window } = props;
   let { path, url } = useRouteMatch();
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -48,70 +49,85 @@ function Dashboard(props) {
       <Toolbar />
       <Divider />
       <List>
-        <ListItem button key={1}>
-          <ListItemIcon>
-            <CreditCardIcon />
-          </ListItemIcon>
-          <Link to={`${url}/payment`}>
-            <ListItemText primary='Pay Now' />
-          </Link>
-        </ListItem>
-        <ListItem button key={1}>
-          <ListItemIcon>
-            <RateReviewIcon />
-          </ListItemIcon>
-          <Link to={`${url}/addreview`}>
-            <ListItemText primary='Add Review' />
-          </Link>
-        </ListItem>
-        <ListItem button key={1}>
-          <ListItemIcon>
-            <ShoppingCartIcon />
-          </ListItemIcon>
-          <Link to={`${url}/orders`}>
-            <ListItemText primary='Manage All Order' />
-          </Link>
-        </ListItem>
-        <ListItem button key={1}>
-          <ListItemIcon>
-            <ShoppingCartIcon />
-          </ListItemIcon>
-          <Link to={`${url}/manageproducts`}>
-            <ListItemText primary='Manage All Products' />
-          </Link>
-        </ListItem>
-        <ListItem button key={1}>
-          <ListItemIcon>
-            <ShoppingCartIcon />
-          </ListItemIcon>
-          <Link to={`${url}/myorder`}>
-            <ListItemText primary='My Order' />
-          </Link>
-        </ListItem>
-        <ListItem button key={1}>
-          <ListItemIcon>
-            <AdminPanelSettingsIcon />
-          </ListItemIcon>
-          <Link to={`${url}/makeAdmin`}>
-            <ListItemText primary='Make Admin' />
-          </Link>
-        </ListItem>
-        <ListItem button key={1}>
-          <ListItemIcon>
-            <AddShoppingCartIcon />
-          </ListItemIcon>
-          <Link to={`${url}/addproduct`}>
-            <ListItemText primary='Add New Product' />
-          </Link>
-        </ListItem>
-        <ListItem button key={1}>
-          <ListItemIcon>
-            <LogoutIcon />
-          </ListItemIcon>
-          <Link to='/' onClick={LogOut}>
-            <ListItemText primary='LOGOUT' />
-          </Link>
-        </ListItem>
+        {admin ? (
+          <>
+            <ListItem button key={1}>
+              <ListItemIcon>
+                <ShoppingCartIcon />
+              </ListItemIcon>
+              <Link to={`${url}/orders`}>
+                <ListItemText primary='Manage All Order' />
+              </Link>
+            </ListItem>
+            <ListItem button key={1}>
+              <ListItemIcon>
+                <ShoppingCartIcon />
+              </ListItemIcon>
+              <Link to={`${url}/manageproducts`}>
+                <ListItemText primary='Manage All Products' />
+              </Link>
+            </ListItem>
+            <ListItem button key={1}>
+              <ListItemIcon>
+                <AdminPanelSettingsIcon />
+              </ListItemIcon>
+              <Link to={`${url}/admin`}>
+                <ListItemText primary='Make Admin' />
+              </Link>
+            </ListItem>
+            <ListItem button key={1}>
+              <ListItemIcon>
+                <AddShoppingCartIcon />
+              </ListItemIcon>
+              <Link to={`${url}/addproduct`}>
+                <ListItemText primary='Add New Product' />
+              </Link>
+            </ListItem>
+            <ListItem button key={1}>
+              <ListItemIcon>
+                <LogoutIcon />
+              </ListItemIcon>
+              <Link to='/' onClick={LogOut}>
+                <ListItemText primary='LOGOUT' />
+              </Link>
+            </ListItem>
+          </>
+        ) : (
+          <>
+            <ListItem button key={1}>
+              <ListItemIcon>
+                <CreditCardIcon />
+              </ListItemIcon>
+              <Link to={`${url}/payment`}>
+                <ListItemText primary='Pay Now' />
+              </Link>
+            </ListItem>
+            <ListItem button key={1}>
+              <ListItemIcon>
+                <RateReviewIcon />
+              </ListItemIcon>
+              <Link to={`${url}/addreview`}>
+                <ListItemText primary='Add Review' />
+              </Link>
+            </ListItem>
+            <ListItem button key={1}>
+              <ListItemIcon>
+                <ShoppingCartIcon />
+              </ListItemIcon>
+              <Link to={`${url}/myorder`}>
+                <ListItemText primary='My Order' />
+              </Link>
+            </ListItem>
+            <ListItem button key={1}>
+              <ListItemIcon>
+                <LogoutIcon />
+              </ListItemIcon>
+              <Link to='/' onClick={LogOut}>
+                <ListItemText primary='LOGOUT' />
+              </Link>
+            </ListItem>
+          </>
+        )}
       </List>
     </div>
   );
@@ -187,9 +203,6 @@ function Dashboard(props) {
             <Route exact path={path}>
               <h3>Please select a produu.</h3>
             </Route>
-            <Route exact path={`${path}/makeAdmin`}>
-              <h3>Please select a produu45.</h3>
-            </Route>
             <Route path={`${path}/addreview`}>
               <AddReview />
             </Route>
@@ -204,6 +217,9 @@ function Dashboard(props) {
             </Route>
             <Route path={`${path}/manageproducts`}>
               <ManageProducts />
+            </Route>
+            <Route path={`${path}/admin`}>
+              <MakeAdmin />
             </Route>
             <Route path={`${path}/addproduct`}>
               <AddProduct />

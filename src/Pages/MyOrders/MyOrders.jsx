@@ -9,7 +9,7 @@ const MyOrders = ({ quantity }) => {
   console.log(user);
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/orders/?email=${user.email}`)
+    fetch(`http://aqueous-tor-77995.herokuapp.com/orders/?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [user.email]);

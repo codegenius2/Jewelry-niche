@@ -1,6 +1,4 @@
-import {
-    getAuth, GoogleAuthProvider, onAuthStateChanged, createUserWithEmailAndPassword, signInWithPopup, signOut, signInWithEmailAndPassword, updateProfile
-} from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializAuthentication from "../firebase/firebase.init";
 
@@ -12,6 +10,7 @@ initializAuthentication();
 const UseFirebase = () => {
     // Create state for update data
     const [user, setUser] = useState({});
+    const [admin, setAdmin] = useState(false);
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(true);
 
@@ -24,7 +23,10 @@ const UseFirebase = () => {
         setIsLoading(true);
         signInWithPopup(auth, GoogleProvider)
             .then((result) => {
-                const destination = location?.state?.from || '/';
+                const user = result.user;
+                // save user data to database
+                saveUser(user.email, user.displayName, 'PUT');
+                const destination = location?.state?.from || '/dashboard';
                 history.push(destination);
                 setError('');
             }).catch((error) => {
@@ -38,6 +40,10 @@ const UseFirebase = () => {
     const signUpWithPassword = (name, email, password, location, history) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
+                const newUser = { email, displayName: name };
+                setUser(newUser);
+                // save user to the database
+                saveUser(email, name, 'POST');
                 // Update user name
                 user["displayName"] = name;
                 updateProfile(auth.currentUser, {
@@ -47,7 +53,7 @@ const UseFirebase = () => {
                 });
                 // Signed in 
 
-                const destination = location?.state?.from || '/';
+                const destination = location?.state?.from || '/dashboard';
                 history.push(destination);
                 setError('');
             })
@@ -64,7 +70,7 @@ const UseFirebase = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Signed in 
-                const destination = location?.state?.from || '/';
+                const destination = location?.state?.from || '/dashboard';
                 history.push(destination);
                 setError('');
             })
@@ -88,6 +94,13 @@ const UseFirebase = () => {
         return () => unsubscribed;
     }, [auth]);
 
+    // Cheack user admin
+    useEffect(() => {
+        fetch(`https://aqueous-tor-77995.herokuapp.com/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+    }, [user.email])
+
     // Create Logout function
     const LogOut = () => {
         setIsLoading(true);
@@ -98,6 +111,19 @@ const UseFirebase = () => {
             })
     };
 
+    // User save function
+    const saveUser = (email, displayName, method) => {
+        const user = { email, displayName };
+        fetch('https://aqueous-tor-77995.herokuapp.com/users', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then()
+    }
+
     // Return Value from here
     return {
         SignInWithGoogle,
@@ -106,6 +132,7 @@ const UseFirebase = () => {
         setIsLoading,
         user,
         LogOut,
+        admin,
         error,
         loginWithEmailPassword
     };
