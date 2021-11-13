@@ -16,7 +16,7 @@ const Header = () => {
           <Navbar.Brand as={Link} to='/'>
             <img
               className='logo'
-              src='https://i.ibb.co/f881qkN/logo.png'
+              src='https://i.ibb.co/DWbkNSq/jewelry2-1-removebg-preview.png'
               alt=''
             />
           </Navbar.Brand>
@@ -26,16 +26,6 @@ const Header = () => {
               <Nav.Link as={Link} to='/products'>
                 EXPLORE PRODUCTS
               </Nav.Link>
-              <Nav.Link as={Link} to='/destination'>
-                DESTINATION
-              </Nav.Link>
-              <Nav.Link as={Link} to='/contact'>
-                CONTACT US
-              </Nav.Link>
-              <Nav.Link as={Link} to='/about'>
-                ABOUT US
-              </Nav.Link>
-
               {/* user login manage menu here */}
               {!user.email ? (
                 <Nav.Link as={Link} to='/login'>

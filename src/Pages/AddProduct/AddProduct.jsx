@@ -9,13 +9,12 @@ const AddProduct = () => {
   const handleRating = (rate) => {
     setRating(rate);
     console.log(rating);
-    // Some logic
   };
 
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    //  if user booking is valid then
+    //  if user data is valid then
     if (!data.title) {
       return (
         <Spinner className='mx-auto' animation='border' variant='danger' />
@@ -41,7 +40,6 @@ const AddProduct = () => {
           }
         });
     }
-    // console.log(bookUser);
   };
   return (
     <Container className='my-md-5 my-3'>
@@ -102,7 +100,7 @@ const AddProduct = () => {
             <input
               className='btn btn-success px-3'
               type='submit'
-              value='ADD PACKAGE'
+              value='ADD PRODUCT'
             />
           </div>
         </form>

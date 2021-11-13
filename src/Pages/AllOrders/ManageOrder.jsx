@@ -11,8 +11,7 @@ const ManageOrder = ({ order }) => {
 
   // Handle Approved function
   const handleStatus = (id) => {
-    order.status = "shipped";
-    const url = `http://aqueous-tor-77995.herokuapp.com/orders/${id}`;
+    const url = `https://aqueous-tor-77995.herokuapp.com/orders/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -26,11 +25,12 @@ const ManageOrder = ({ order }) => {
   const handleDelete = (id) => {
     const procced = window.confirm("Are you sure you want to Delete ?");
     if (procced) {
-      fetch(`http://aqueous-tor-77995.herokuapp.com/orders/${id}`, {
+      fetch(`https://aqueous-tor-77995.herokuapp.com/orders/${id}`, {
         method: "DELETE",
       })
         .then((response) => response.json())
         .then((deleteData) => {
+          console.log(deleteData);
           if (deleteData.deletedCount > 0) {
             alert("Deleted Successfully");
           }
@@ -65,7 +65,7 @@ const ManageOrder = ({ order }) => {
             </Col>
             <Col xs={6}>
               <Button variant='contained' onClick={() => handleDelete(_id)}>
-                Delete Now
+                Delete
               </Button>
             </Col>
           </Row>

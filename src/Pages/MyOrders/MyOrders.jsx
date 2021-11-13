@@ -6,13 +6,14 @@ import OrderProduct from "./OrderProduct";
 
 const MyOrders = ({ quantity }) => {
   const { user } = useAuth();
-  console.log(user);
   const [products, setProducts] = useState([]);
+
+  // load user products from database
   useEffect(() => {
-    fetch(`http://aqueous-tor-77995.herokuapp.com/orders/?email=${user.email}`)
-      .then((res) => res.json())
+    fetch(`https://aqueous-tor-77995.herokuapp.com/orders/${user.email}`)
+      .then((response) => response.json())
       .then((data) => setProducts(data));
-  }, [user.email]);
+  }, [user.email, products]);
   return (
     <Container className='my-md-5 my-3 text-center'>
       {products.length ? (

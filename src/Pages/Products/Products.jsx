@@ -6,11 +6,13 @@ import Product from "./Product";
 
 const Products = ({ quantity }) => {
   const [products, setProducts] = useState([]);
+
+  // fetch all products from database
   useEffect(() => {
     fetch("https://aqueous-tor-77995.herokuapp.com/jewelry")
       .then((res) => res.json())
       .then((data) => setProducts(data));
-  }, []);
+  }, [products]);
   return (
     <Container className='my-md-5 my-3 text-center'>
       <p className='products-title'>Feature Products</p>

@@ -1,22 +1,21 @@
 import Container from "@mui/material/Container";
 import React, { useEffect, useState } from "react";
 import { Row } from "react-bootstrap";
-import useAuth from "../../Hooks/useAuth";
 import ManageOrder from "./ManageOrder";
 
-const AllOrders = ({ quantity }) => {
-  const { user } = useAuth();
-  console.log(user);
+const AllOrders = () => {
+  // make variable for store product
   const [products, setProducts] = useState([]);
+  // fetch api load all orders
   useEffect(() => {
-    fetch("http://aqueous-tor-77995.herokuapp.com/allorders")
+    fetch("https://aqueous-tor-77995.herokuapp.com/orders")
       .then((res) => res.json())
       .then((data) => setProducts(data));
-  }, [user.email, products]);
+  }, [products]);
   return (
     <Container className='my-md-5 my-3 text-center'>
       <Row className='g-5'>
-        {products.slice(0, quantity).map((product) => (
+        {products.map((product) => (
           <ManageOrder key={product._id} order={product} />
         ))}
       </Row>

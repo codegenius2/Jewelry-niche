@@ -35,6 +35,7 @@ import MakeAdmin from "../MakeAdmin/MakeAdmin";
 const drawerWidth = 240;
 
 function Dashboard(props) {
+  // import logout and admin from use Auth
   const { LogOut, admin } = useAuth();
   const { window } = props;
   let { path, url } = useRouteMatch();
@@ -50,6 +51,7 @@ function Dashboard(props) {
       <Divider />
       <List>
         {admin ? (
+          // Declare admin dashboard options
           <>
             <ListItem button key={1}>
               <ListItemIcon>
@@ -93,6 +95,7 @@ function Dashboard(props) {
             </ListItem>
           </>
         ) : (
+          // Declare users dashboard options
           <>
             <ListItem button key={1}>
               <ListItemIcon>

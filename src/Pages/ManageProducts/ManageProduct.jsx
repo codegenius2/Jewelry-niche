@@ -7,10 +7,11 @@ import { Col } from "react-bootstrap";
 import "../Products/Products.css";
 
 const ManageProduct = ({ product }) => {
+  // handle delete function
   const handleDelete = (id) => {
     const procced = window.confirm("Are you sure you want to Delete ?");
     if (procced) {
-      fetch(`http://aqueous-tor-77995.herokuapp.com/jewelry/${id}`, {
+      fetch(`https://aqueous-tor-77995.herokuapp.com/jewelry/${id}`, {
         method: "DELETE",
       })
         .then((response) => response.json())

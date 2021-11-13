@@ -26,7 +26,6 @@ const Order = () => {
   //   Use form hooks function
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    // setBookUser(data);
     console.log(data);
     //  if user Order is valid then
     if (!data.name) {

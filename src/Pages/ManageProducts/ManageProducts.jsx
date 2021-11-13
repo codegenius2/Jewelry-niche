@@ -5,11 +5,12 @@ import ManageProduct from "./ManageProduct";
 
 const ManageProducts = ({ quantity }) => {
   const [products, setProducts] = useState([]);
+  // load all products api from database
   useEffect(() => {
     fetch("https://aqueous-tor-77995.herokuapp.com/jewelry")
       .then((res) => res.json())
       .then((data) => setProducts(data));
-  }, []);
+  }, [products]);
   return (
     <Container className='my-md-5 my-3 text-center'>
       <Row className='g-5'>
