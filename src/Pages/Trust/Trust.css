@@ -1,0 +1,13 @@
+.trust-logo {
+  width: 60px;
+  height: 60px;
+}
+.trust-title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+.trust-text {
+  color: rgb(120, 120, 120);
+  text-align: center;
+}

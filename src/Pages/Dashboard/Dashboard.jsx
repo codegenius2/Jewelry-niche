@@ -204,7 +204,7 @@ function Dashboard(props) {
           <Toolbar />
           <Switch>
             <Route exact path={path}>
-              <h3>Please select a produu.</h3>
+              <h3>This is our simple dashboard.</h3>
             </Route>
             <Route path={`${path}/addreview`}>
               <AddReview />

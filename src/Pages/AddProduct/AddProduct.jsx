@@ -71,7 +71,7 @@ const AddProduct = () => {
               type='text'
               className='form-control'
               id='floatingInput'
-              {...register("img")}
+              {...register("image")}
               required
             />
             <label htmlFor='floatingInput'>Image Link</label>
