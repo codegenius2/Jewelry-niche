@@ -14,3 +14,8 @@
     background-color: #00e1ff;
     box-shadow: 0 0 0 0.1rem rgba(60, 127, 153, 0.5);
 }
+
+.payment-button {
+    text-align: center;
+    margin: 30px auto;
+}

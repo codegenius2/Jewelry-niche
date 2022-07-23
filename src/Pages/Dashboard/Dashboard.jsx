@@ -1,5 +1,11 @@
-import * as React from "react";
-import "./Dashboard.css";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
+import CreditCardIcon from "@mui/icons-material/CreditCard";
+import HomeIcon from "@mui/icons-material/Home";
+import LogoutIcon from "@mui/icons-material/Logout";
+import MenuIcon from "@mui/icons-material/Menu";
+import RateReviewIcon from "@mui/icons-material/RateReview";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -10,27 +16,21 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import * as React from "react";
+import Button from "react-bootstrap/Button";
+import { Route, Switch, useRouteMatch } from "react-router";
 import { Link } from "react-router-dom";
-import { Route, Switch } from "react-router";
-import { useRouteMatch } from "react-router";
-import AddReview from "../AddReview/AddReview";
 import useAuth from "../../Hooks/useAuth";
-import Payment from "../Payment/Payment";
-import HomeIcon from "@mui/icons-material/Home";
-import CreditCardIcon from "@mui/icons-material/CreditCard";
-import RateReviewIcon from "@mui/icons-material/RateReview";
-import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import LogoutIcon from "@mui/icons-material/Logout";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import MyOrders from "../MyOrders/MyOrders";
 import AddProduct from "../AddProduct/AddProduct";
+import AddReview from "../AddReview/AddReview";
 import AllOrders from "../AllOrders/AllOrders";
-import ManageProducts from "../ManageProducts/ManageProducts";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
+import ManageProducts from "../ManageProducts/ManageProducts";
+import MyOrders from "../MyOrders/MyOrders";
+import Payment from "../Payment/Payment";
+import "./Dashboard.css";
 
 const drawerWidth = 240;
 
@@ -40,6 +40,11 @@ function Dashboard(props) {
   const { window } = props;
   let { path, url } = useRouteMatch();
   const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const [show, setShow] = React.useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -101,9 +106,9 @@ function Dashboard(props) {
               <ListItemIcon>
                 <CreditCardIcon />
               </ListItemIcon>
-              <Link to={`${url}/payment`}>
+              <Button variant='text' onClick={handleShow}>
                 <ListItemText primary='Pay Now' />
-              </Link>
+              </Button>
             </ListItem>
             <ListItem button key={1}>
               <ListItemIcon>
@@ -230,6 +235,7 @@ function Dashboard(props) {
           </Switch>
         </Box>
       </Box>
+      <Payment show={show} handleClose={handleClose} />
     </>
   );
 }
