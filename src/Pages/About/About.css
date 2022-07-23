@@ -1,0 +1,95 @@
+/* Start css for Our Aboutus page */
+.about-us {
+    background-color: #F2F8FB;
+}
+
+.about-title {
+    font-size: 60px;
+    font-weight: 600;
+    font-family: Suisse Works;
+    color: #1c1d1f;
+    text-align: left;
+}
+
+.second-title {
+    font-size: 40px;
+    margin-top: 40px;
+    color: #1c1d1f;
+    font-family: Suisse Works;
+    font-weight: 600;
+    text-align: center;
+}
+
+.text {
+    font-size: 19px;
+    color: #1c1d1f;
+    text-align: center;
+}
+
+.service-title {
+    font-size: 28px;
+    color: #263E70;
+    font-weight: 600;
+    text-align: center;
+}
+
+.service-sub {
+    font-size: 20px;
+    font-weight: 700;
+    color: #263E70;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    color: #157347;
+    font-size: 30px;
+    padding-right: 20px;
+}
+
+.service-text {
+    color: #263E70;
+    font-size: 14px;
+}
+
+.service-info {
+    text-align: left;
+}
+
+.img-about {
+    width: 400px;
+}
+
+
+.info-box {
+    color: #444444;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(214, 215, 216, 0.5);
+    padding: 20px 0 30px 0;
+}
+
+.info-box svg {
+    font-size: 60px;
+    color: #3fbbc0;
+    border-radius: 50%;
+    padding: 10px;
+    border: 2px dotted #c5ebec;
+}
+
+.info-box-title {
+    font-size: 20px;
+    color: #777777;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.about-info-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.about-info-box div {
+    height: 200px;
+    align-self: baseline;
+}

@@ -1,0 +1,16 @@
+/* Css for regular Button */
+.btn-regular {
+    border: 0;
+    padding: 7px 15px;
+    transition: 0.4s;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #13c5dd;
+}
+
+.btn-regular:hover,
+.btn-regular:focus {
+    color: #000;
+    background-color: #00e1ff;
+    box-shadow: 0 0 0 0.1rem rgba(60, 127, 153, 0.5);
+}

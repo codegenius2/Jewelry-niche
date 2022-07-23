@@ -1,0 +1,83 @@
+.contact-card {
+    background-color: #f3fcff;
+    color: #1f2b6c;
+    text-align: left;
+}
+
+.contact-card:hover {
+    background-color: aquamarine;
+}
+
+.img-contact-card {
+    width: 40px;
+    height: 40px;
+    margin: 20px;
+}
+
+.contact-sub {
+    color: #159eec;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.card {
+    width: 500px;
+    max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+  # Contact
+  --------------------------------------------------------------*/
+.medi-map {
+    border: 0;
+    height: 340px;
+    width: 100%;
+}
+
+.contact .info-box {
+    color: #444444;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(214, 215, 216, 0.5);
+    padding: 20px 0 30px 0;
+}
+
+.contact .info-box svg {
+    font-size: 60px;
+    color: #3fbbc0;
+    border-radius: 50%;
+    padding: 10px;
+    border: 2px dotted #c5ebec;
+}
+
+.info-box-title {
+    font-size: 20px;
+    color: #777777;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.contact .info-box p {
+    padding: 0;
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.contact .email-form {
+    box-shadow: 0 0 20px rgba(214, 215, 216, 0.5);
+    padding: 48px 30px;
+}
+
+.contact .email-form input,
+.contact .email-form textarea {
+    border-radius: 4px;
+    padding: 10px 15px;
+    box-shadow: none;
+    font-size: 14px;
+}
+
+.contact .email-form input:focus,
+.contact .email-form textarea:focus {
+    border-color: #3fbbc0;
+}

@@ -1,5 +1,5 @@
 .Slider {
-  color: white;
+  color: #000000;
   text-align: center;
 }
 
@@ -9,18 +9,34 @@
   z-index: 10;
   text-align: left;
   top: 20%;
-  left: 5%;
-  right: auto;
   bottom: auto;
 }
+
+.carousel-caption.left {
+  left: 5%;
+  right: auto;
+}
+
+.carousel-caption.right {
+  right: 5%;
+  left: auto;
+}
+
 .slider-title {
+  color: #000000;
   font-size: 30px;
   font-weight: 400;
   margin-bottom: 30px;
 }
+
 .slider-text {
+  color: #000000;
   font-size: 18px;
   font-family: Cabin;
+}
+
+.subtitle {
+  color: #DF7B27;
 }
 
 @media screen and (min-width: 668px) {

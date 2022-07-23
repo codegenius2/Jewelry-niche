@@ -1,9 +1,9 @@
-import React from "react";
-import { Container, Nav, Navbar, NavDropdown, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import useAuth from "../../../Hooks/useAuth";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LogoutIcon from "@mui/icons-material/Logout";
+import React from "react";
+import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import useAuth from "../../../Hooks/useAuth";
 import "./Header.css";
 
 const Header = () => {
@@ -23,14 +23,25 @@ const Header = () => {
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse className='bg-navbar' id='responsive-navbar-nav'>
             <Nav className='mx-auto nav-bar'>
+              <Nav.Link as={Link} to='/about'>
+                ABOUT US
+              </Nav.Link>
+              <Nav.Link as={Link} to='/contact'>
+                CONTACT US
+              </Nav.Link>
               <Nav.Link as={Link} to='/products'>
-                EXPLORE PRODUCTS
+                EXPLORE SHOP
               </Nav.Link>
               {/* user login manage menu here */}
               {!user.email ? (
-                <Nav.Link as={Link} to='/login'>
-                  <Button className='btn btn-success'>Sign in</Button>
-                </Nav.Link>
+                <>
+                  <Nav.Link as={Link} to='/login'>
+                    <Button className='btn btn-regular'>Sign in</Button>
+                  </Nav.Link>
+                  <Nav.Link as={Link} to='/registration'>
+                    <Button className='btn btn-regular'>Registration</Button>
+                  </Nav.Link>
+                </>
               ) : (
                 <>
                   <Nav.Link as={Link} to='/dashboard'>

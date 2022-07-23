@@ -2,14 +2,19 @@
 .header {
   height: 75px;
   margin: 0;
-  background-color: antiquewhite;
+  background-color: #F8F9FA;
 }
+
 .logo {
   width: 180px;
 }
+
 .nav-bar {
   font-size: 18px;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .bg-navbar {
@@ -20,23 +25,28 @@
   padding: 10px;
   width: 250px;
 }
+
 .profile-img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
+
 .profile-info-img {
   width: 80px;
   height: 80px;
   border-radius: 50%;
 }
+
 #basic-nav-dropdown::after {
   display: none;
 }
+
 .profile-info-body a {
   text-decoration: none;
   color: #22343d;
 }
+
 .hico {
   color: #ff00b3;
 }

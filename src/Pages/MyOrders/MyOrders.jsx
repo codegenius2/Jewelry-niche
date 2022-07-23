@@ -14,6 +14,7 @@ const MyOrders = ({ quantity }) => {
       .then((response) => response.json())
       .then((data) => setProducts(data));
   }, [user.email, products]);
+
   return (
     <Container className='my-md-5 my-3 text-center'>
       {products.length ? (

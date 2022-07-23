@@ -1,5 +1,5 @@
 import React from "react";
-import { Carousel, Button } from "react-bootstrap";
+import { Button, Carousel } from "react-bootstrap";
 import "./Slider.css";
 
 function Slider() {
@@ -10,16 +10,14 @@ function Slider() {
         <Carousel.Item>
           <img
             className='d-block w-100'
-            src='https://i.ibb.co/zsPV0fq/sider4-2.jpg'
+            src='https://i.ibb.co/D5hDkK3/slider3-6961d5ba-6657-44d0-924d-48cb84f24007-2000x.webp'
             alt='First slide'
           />
-          <Carousel.Caption>
-            <p className='slider-text'>AMAZING FROM JEWELRY</p>
+          <Carousel.Caption className='left'>
+            <p className='slider-text subtitle'>AMAZING FROM JEWELRY</p>
             <h3 className='slider-title'>Dimond Rings Decoration</h3>
             <p className='slider-text'>Discount 20% Off For Ruby Members</p>
-            <Button
-              className='px-4 py-3 rounded-pill mt-4'
-              variant='outline-danger'>
+            <Button className='px-4 py-3 rounded-pill mt-4' variant='danger'>
               DISCOVER NOW
             </Button>
           </Carousel.Caption>
@@ -27,17 +25,15 @@ function Slider() {
         <Carousel.Item>
           <img
             className='d-block w-100'
-            src='https://i.ibb.co/XWwfwQh/slider4-1.jpg'
+            src='https://i.ibb.co/wwbj9xq/slider-6804f5c5-7a22-4249-b276-44c59cc9c305-2000x.webp'
             alt='Second slide'
           />
 
-          <Carousel.Caption>
-            <p className='slider-text'>AMAZING FROM JEWELRY</p>
+          <Carousel.Caption className='right'>
+            <p className='slider-text subtitle'>AMAZING FROM JEWELRY</p>
             <h3 className='slider-title'>Gold Rings Decoration</h3>
             <p className='slider-text'>Discount 20% Off For Ruby Members</p>
-            <Button
-              className='px-4 py-3 rounded-pill mt-4'
-              variant='outline-danger'>
+            <Button className='px-4 py-3 rounded-pill mt-4' variant='danger'>
               DISCOVER NOW
             </Button>
           </Carousel.Caption>
