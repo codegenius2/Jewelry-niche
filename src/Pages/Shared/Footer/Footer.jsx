@@ -20,7 +20,7 @@ function Footer() {
               diamonds but can cost up to 30% less.
             </p>
             <Link to='/products'>
-              <button className='btn btn-success px-3 mt-md-4'>
+              <button className='btn btn-regular px-3 mt-md-4'>
                 EXPLORE NOW
               </button>
             </Link>

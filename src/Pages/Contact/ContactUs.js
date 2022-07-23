@@ -4,6 +4,7 @@ import "./Contact.css";
 
 
 function Contact() {
+    
     return (
         <div className='mt-md-5 my-3'>
             <p className='contact-sub mt-3 text-center'>Get in touch</p>
