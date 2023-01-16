@@ -11,7 +11,7 @@ const Product = ({ product }) => {
   // return every product card
   return (
     <Col xs={12} md={4}>
-      <Card sx={{ minWidth: "100%" }}>
+      <Card sx={{ minWidth: "90%" }}>
         <CardActionArea>
           <CardMedia height={352} component='img' image={product.image} alt='jewelry' />
           <CardContent>

@@ -8,10 +8,15 @@ import "./Login.css";
 
 const Login = () => {
   // import data from useAuth, useLocation and useHistory.
-  const { loginWithEmailPassword, SignInWithGoogle, isLoading, error, user } =
-    useAuth();
+  const {
+    loginWithEmailPassword,
+    SignInWithGoogle,
+    isLoading,
+    error,
+    user } = useAuth();
   const location = useLocation();
   const history = useHistory();
+
   // handle Google Login Function
   const handleGoogleLogin = () => {
     SignInWithGoogle(location, history);
@@ -80,11 +85,10 @@ const Login = () => {
                       onClick={handleGoogleLogin}
                       variant='contained'
                       color='warning'>
-                      <i className='fab fa-google me-2'></i> Sign in with Google
+                      {isLoading ? <CircularProgress size={20} /> : <><i className='fab fa-google me-2'></i> "Sign in with Google"</>}
                     </Button>
                   </div>
                 </form>
-                {isLoading && <CircularProgress />}
                 {user?.email && (
                   <Alert severity='success'>User Login successfully!</Alert>
                 )}

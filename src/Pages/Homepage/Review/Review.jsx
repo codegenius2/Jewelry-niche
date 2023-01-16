@@ -31,7 +31,7 @@ function Review() {
       <Box>
         <h1 className='review-title'>What People Say</h1>
         <p className='review-text'>Testimonials</p>
-        <img style={{ maxWidth: '100%' }} src='https://i.ibb.co/hswdsLY/title-line.png' alt='' />
+        <img style={{ maxWidth: '90%' }} src='https://i.ibb.co/hswdsLY/title-line.png' alt='' />
         <AutoPlaySwipeableViews
           axis={theme.direction === "rtl" ? "x-reverse" : "x"}
           index={activeStep}
