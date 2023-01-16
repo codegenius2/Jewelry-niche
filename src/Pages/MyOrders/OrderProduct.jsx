@@ -13,7 +13,7 @@ const OrderProduct = ({ order }) => {
   const handleDelete = (id) => {
     const procced = window.confirm("Are you sure you want to Delete ?");
     if (procced) {
-      fetch(`http://localhost:5000/orders/${id}`, {
+      fetch(`https://jewelry-niche-server.vercel.app/orders/${id}`, {
         method: "DELETE",
       })
         .then((response) => response.json())

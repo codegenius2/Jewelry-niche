@@ -14,7 +14,7 @@ const MakeAdmin = () => {
   // make admin function
   const handleAdminSubmit = (e) => {
     const user = { email };
-    fetch("http://localhost:5000/users/admin", {
+    fetch("https://jewelry-niche-server.vercel.app/users/admin", {
       method: "PUT",
       headers: {
         "content-type": "application/json",

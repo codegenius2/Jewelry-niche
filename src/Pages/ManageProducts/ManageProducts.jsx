@@ -7,7 +7,7 @@ const ManageProducts = ({ quantity }) => {
   const [products, setProducts] = useState([]);
   // load all products api from database
   useEffect(() => {
-    fetch("http://localhost:5000/jewelry")
+    fetch("https://jewelry-niche-server.vercel.app/jewelry")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [products]);

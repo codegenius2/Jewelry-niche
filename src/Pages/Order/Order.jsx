@@ -17,7 +17,7 @@ const Order = () => {
   //   fetch singleProduct from API and set
   const [singleProduct, setSingleProduct] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/jewelry/${id}`)
+    fetch(`https://jewelry-niche-server.vercel.app/jewelry/${id}`)
       .then((response) => response.json())
       .then((data) => setSingleProduct(data));
   }, [id]);
@@ -37,7 +37,7 @@ const Order = () => {
       data.product = singleProduct;
 
       //   fetch the post API
-      fetch("http://localhost:5000/orders", {
+      fetch("https://jewelry-niche-server.vercel.app/orders", {
         method: "POST",
         headers: {
           "content-type": "application/json",

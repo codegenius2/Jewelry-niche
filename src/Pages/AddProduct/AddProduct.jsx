@@ -22,7 +22,7 @@ const AddProduct = () => {
     } else {
       data.rating = rating;
       //   fetch the post API
-      fetch("http://localhost:5000/jewelry", {
+      fetch("https://jewelry-niche-server.vercel.app/jewelry", {
         method: "POST",
         headers: {
           "content-type": "application/json",

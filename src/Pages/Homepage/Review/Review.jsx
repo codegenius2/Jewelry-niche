@@ -21,7 +21,7 @@ function Review() {
   const [reviews, setReviews] = React.useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/review/")
+    fetch("https://jewelry-niche-server.vercel.app/review/")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

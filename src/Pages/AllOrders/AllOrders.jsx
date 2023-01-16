@@ -8,7 +8,7 @@ const AllOrders = () => {
   const [products, setProducts] = useState([]);
   // fetch api load all orders
   useEffect(() => {
-    fetch("http://localhost:5000/orders")
+    fetch("https://jewelry-niche-server.vercel.app/orders")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [products]);

@@ -96,7 +96,7 @@ const UseFirebase = () => {
 
     // Cheack user admin
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://jewelry-niche-server.vercel.app/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
@@ -114,7 +114,7 @@ const UseFirebase = () => {
     // User save function
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('http://localhost:5000/users', {
+        fetch('https://jewelry-niche-server.vercel.app/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'
