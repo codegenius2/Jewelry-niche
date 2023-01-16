@@ -22,7 +22,7 @@ const AddProduct = () => {
     } else {
       data.rating = rating;
       //   fetch the post API
-      fetch("https://aqueous-tor-77995.herokuapp.com/jewelry", {
+      fetch("http://localhost:5000/jewelry", {
         method: "POST",
         headers: {
           "content-type": "application/json",

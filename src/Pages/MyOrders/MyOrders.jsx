@@ -10,7 +10,7 @@ const MyOrders = ({ quantity }) => {
 
   // load user products from database
   useEffect(() => {
-    fetch(`https://aqueous-tor-77995.herokuapp.com/orders/${user.email}`)
+    fetch(`http://localhost:5000/orders/${user.email}`)
       .then((response) => response.json())
       .then((data) => setProducts(data));
   }, [user.email, products]);

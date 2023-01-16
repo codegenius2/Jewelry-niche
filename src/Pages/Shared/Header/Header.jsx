@@ -9,6 +9,7 @@ import "./Header.css";
 const Header = () => {
   // import user and logout from useAuth
   const { user, LogOut } = useAuth();
+
   return (
     <div className='header sticky-top shadow-lg'>
       <Navbar className='' collapseOnSelect expand='lg' variant='light'>

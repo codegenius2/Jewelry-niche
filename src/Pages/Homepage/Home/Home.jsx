@@ -1,12 +1,12 @@
-import React from "react";
 import Button from "@mui/material/Button";
+import React from "react";
+import { Link } from "react-router-dom";
 import Products from "../../Products/Products";
+import Footer from "../../Shared/Footer/Footer";
+import Trust from "../../Trust/Trust";
 import Category from "../Category/Category";
 import Review from "../Review/Review";
 import Slider from "../Slider/Slider";
-import { Link } from "react-router-dom";
-import Footer from "../../Shared/Footer/Footer";
-import Trust from "../../Trust/Trust";
 
 const Home = () => {
   return (

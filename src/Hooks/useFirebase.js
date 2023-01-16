@@ -96,7 +96,7 @@ const UseFirebase = () => {
 
     // Cheack user admin
     useEffect(() => {
-        fetch(`https://aqueous-tor-77995.herokuapp.com/users/${user.email}`)
+        fetch(`http://localhost:5000/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
@@ -114,7 +114,7 @@ const UseFirebase = () => {
     // User save function
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('https://aqueous-tor-77995.herokuapp.com/users', {
+        fetch('http://localhost:5000/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'

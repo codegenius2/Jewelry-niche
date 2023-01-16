@@ -2,9 +2,9 @@ import { Alert } from "@mui/material";
 import React, { useState } from "react";
 import { Container, Spinner } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { Rating } from "react-simple-star-rating";
 import useAuth from "../../Hooks/useAuth";
 import "./AddReview.css";
-import { Rating } from "react-simple-star-rating";
 
 const AddReview = () => {
   const [rating, setRating] = useState(1); // initial rating value
@@ -30,9 +30,9 @@ const AddReview = () => {
         data.img =
           "https://i.ibb.co/ZJPQfBr/115-1150152-default-profile-picture-avatar-png-green.jpg";
       }
-      
+
       //   fetch the post API
-      fetch("https://aqueous-tor-77995.herokuapp.com/review", {
+      fetch("http://localhost:5000/review", {
         method: "POST",
         headers: {
           "content-type": "application/json",

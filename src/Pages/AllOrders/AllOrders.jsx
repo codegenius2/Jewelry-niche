@@ -8,10 +8,11 @@ const AllOrders = () => {
   const [products, setProducts] = useState([]);
   // fetch api load all orders
   useEffect(() => {
-    fetch("https://aqueous-tor-77995.herokuapp.com/orders")
+    fetch("http://localhost:5000/orders")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [products]);
+
   return (
     <Container className='my-md-5 my-3 text-center'>
       <Row className='g-5'>

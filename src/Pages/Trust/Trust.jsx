@@ -3,6 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import "./Trust.css";
 
 const Trust = () => {
+
   return (
     <div className='mt-5 mb-3 text-center'>
       <Row className='g-5 mx-3'>

@@ -3,8 +3,7 @@ import Alert from "@mui/material/Alert";
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row, Spinner } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useHistory } from "react-router";
-import { useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
 import useAuth from "../../Hooks/useAuth";
 import "./Order.css";
 
@@ -18,7 +17,7 @@ const Order = () => {
   //   fetch singleProduct from API and set
   const [singleProduct, setSingleProduct] = useState({});
   useEffect(() => {
-    fetch(`https://aqueous-tor-77995.herokuapp.com/jewelry/${id}`)
+    fetch(`http://localhost:5000/jewelry/${id}`)
       .then((response) => response.json())
       .then((data) => setSingleProduct(data));
   }, [id]);
@@ -38,7 +37,7 @@ const Order = () => {
       data.product = singleProduct;
 
       //   fetch the post API
-      fetch("https://aqueous-tor-77995.herokuapp.com/orders", {
+      fetch("http://localhost:5000/orders", {
         method: "POST",
         headers: {
           "content-type": "application/json",

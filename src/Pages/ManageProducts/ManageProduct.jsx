@@ -11,7 +11,7 @@ const ManageProduct = ({ product }) => {
   const handleDelete = (id) => {
     const procced = window.confirm("Are you sure you want to Delete ?");
     if (procced) {
-      fetch(`https://aqueous-tor-77995.herokuapp.com/jewelry/${id}`, {
+      fetch(`http://localhost:5000/jewelry/${id}`, {
         method: "DELETE",
       })
         .then((response) => response.json())

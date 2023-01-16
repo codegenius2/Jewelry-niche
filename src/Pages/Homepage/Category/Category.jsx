@@ -1,8 +1,8 @@
+import Container from "@mui/material/Container";
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import Container from "@mui/material/Container";
-import "./Category.css";
 import { Link } from "react-router-dom";
+import "./Category.css";
 
 const Category = () => {
   return (

@@ -12,6 +12,7 @@ const PrivateRoute = ({ children, ...rest }) => {
             <Spinner animation="border" variant="danger" />
         </div>)
     }
+
     return (
         <Route
             {...rest}

@@ -19,17 +19,19 @@ function Review() {
   };
 
   const [reviews, setReviews] = React.useState([]);
+
   useEffect(() => {
-    fetch("https://aqueous-tor-77995.herokuapp.com/review/")
+    fetch("http://localhost:5000/review/")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
+
   return (
     <Container className='text-center my-md-5 my-3 review-container p-sm-5 mx-auto'>
       <Box>
         <h1 className='review-title'>What People Say</h1>
         <p className='review-text'>Testimonials</p>
-        <img src='https://i.ibb.co/hswdsLY/title-line.png' alt='' />
+        <img style={{ maxWidth: '100%' }} src='https://i.ibb.co/hswdsLY/title-line.png' alt='' />
         <AutoPlaySwipeableViews
           axis={theme.direction === "rtl" ? "x-reverse" : "x"}
           index={activeStep}

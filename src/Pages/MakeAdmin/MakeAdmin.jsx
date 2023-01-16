@@ -14,7 +14,7 @@ const MakeAdmin = () => {
   // make admin function
   const handleAdminSubmit = (e) => {
     const user = { email };
-    fetch("https://aqueous-tor-77995.herokuapp.com/users/admin", {
+    fetch("http://localhost:5000/users/admin", {
       method: "PUT",
       headers: {
         "content-type": "application/json",

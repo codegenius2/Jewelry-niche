@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./Footer.css";
 
 function Footer() {
+
   return (
     <div className='pb-md-5 py-3 footer-area'>
       <Container>
