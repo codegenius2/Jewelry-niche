@@ -15,7 +15,7 @@ const AllOrders = () => {
 
   return (
     <Container className='my-md-5 my-3 text-center'>
-      <Row className='g-5'>
+      <Row className='g-3 g-md-5'>
         {products.map((product) => (
           <ManageOrder key={product._id} order={product} />
         ))}

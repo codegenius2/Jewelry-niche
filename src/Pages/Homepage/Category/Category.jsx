@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "./Category.css";
 
 const Category = () => {
+  
   return (
     <Container className='my-md-5 my-3'>
       <Row>

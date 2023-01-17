@@ -47,65 +47,68 @@ const AddReview = () => {
         });
     }
   };
+
   return (
-    <Container className='order-form mx-auto'>
-      <p className='addReview-title mb-md-5 mb-3'>Please Give Your Feedback</p>
-      {success ? (
-        <Alert severity='success'>Feedback Added Successfully!</Alert>
-      ) : (
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <Rating
-            onClick={handleRating}
-            ratingValue={rating}
-            size={40}
-            label
-            transition
-            fillColor='orange'
-            emptyColor='gray'
-            className='foo' // Will remove the inline style if applied
-          />
-          <div className='form-floating mb-3'>
-            <input
-              type='text'
-              className='form-control'
-              id='floatingInput'
-              value={user.displayName}
-              {...register("Name")}
-              required
+    <Container className='w-100'>
+      <div className='order-form mx-auto'>
+        <p className='addReview-title mb-md-5 mb-3'>Please Give Your Feedback</p>
+        {success ? (
+          <Alert severity='success'>Feedback Added Successfully!</Alert>
+        ) : (
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <Rating
+              onClick={handleRating}
+              ratingValue={rating}
+              size={40}
+              label
+              transition
+              fillColor='orange'
+              emptyColor='gray'
+              className='foo' // Will remove the inline style if applied
             />
-            <label htmlFor='floatingInput'>Name</label>
-          </div>
+            <div className='form-floating mb-3'>
+              <input
+                type='text'
+                className='form-control'
+                id='floatingInput'
+                value={user.displayName}
+                {...register("Name")}
+                required
+              />
+              <label htmlFor='floatingInput'>Name</label>
+            </div>
 
-          <div className='form-floating mb-3'>
+            <div className='form-floating mb-3'>
+              <input
+                type='email'
+                value={user.email}
+                className='form-control'
+                id='floatingInput'
+                {...register("Email")}
+                required
+              />
+              <label htmlFor='floatingInput'>Email</label>
+            </div>
+
+            <div className='form-floating mb-3'>
+              <input
+                type='text'
+                className='form-control'
+                id='floatingInput'
+                {...register("message")}
+                required
+              />
+              <label htmlFor='floatingInput'>Message</label>
+            </div>
+
             <input
-              type='email'
-              value={user.email}
-              className='form-control'
-              id='floatingInput'
-              {...register("Email")}
-              required
+              className='btn btn-success px-3'
+              type='submit'
+              value='Add Feedback'
             />
-            <label htmlFor='floatingInput'>Email</label>
-          </div>
-
-          <div className='form-floating mb-3'>
-            <input
-              type='text'
-              className='form-control'
-              id='floatingInput'
-              {...register("message")}
-              required
-            />
-            <label htmlFor='floatingInput'>Message</label>
-          </div>
-
-          <input
-            className='btn btn-success px-3'
-            type='submit'
-            value='Add Feedback'
-          />
-        </form>
-      )}
+          </form>
+        )}
+      </div>
     </Container>
   );
 };

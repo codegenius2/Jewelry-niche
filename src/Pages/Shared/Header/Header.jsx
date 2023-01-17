@@ -22,7 +22,7 @@ const Header = () => {
             />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
-          <Navbar.Collapse className='bg-navbar' id='responsive-navbar-nav'>
+          <Navbar.Collapse className='text-bg-light mt-2' id='responsive-navbar-nav'>
             <Nav className='mx-auto nav-bar'>
               <Nav.Link as={Link} to='/about'>
                 ABOUT US

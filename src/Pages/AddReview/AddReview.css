@@ -1,5 +1,6 @@
 .order-form {
   text-align: center;
+  width: 100% !important;
 }
 .addReview-title {
   font-size: 25px;

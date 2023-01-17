@@ -12,7 +12,7 @@ const Products = ({ quantity }) => {
     fetch("https://jewelry-niche-server.vercel.app/jewelry")
       .then((res) => res.json())
       .then((data) => setProducts(data));
-  }, [products]);
+  }, []);
 
   return (
     <Container className='my-md-5 my-3 text-center'>

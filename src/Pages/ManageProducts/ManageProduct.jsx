@@ -22,11 +22,12 @@ const ManageProduct = ({ product }) => {
         });
     }
   };
+
   return (
     <Col xs={12} md={4}>
-      <Card sx={{ minWidth: "100%" }}>
+      <Card sx={{ minWidth: "90%" }}>
         <CardActionArea>
-          <CardMedia component='img' image={product.image} alt='jewelry' />
+          <CardMedia height={352} component='img' image={product.image} alt='jewelry' />
           <CardContent>
             <p className='product-title'>{product.title}</p>
             <p className='product-vendor'>{product.vendor}</p>

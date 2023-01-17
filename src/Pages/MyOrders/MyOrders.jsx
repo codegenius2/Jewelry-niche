@@ -18,7 +18,7 @@ const MyOrders = ({ quantity }) => {
   return (
     <Container className='my-md-5 my-3 text-center'>
       {products.length ? (
-        <Row className='g-5'>
+        <Row className='g-3 g-sm-5'>
           {products.slice(0, quantity).map((product) => (
             <OrderProduct key={product._id} order={product} />
           ))}
